@@ -38,34 +38,25 @@ class App extends React.Component {
     // </div>
     // </div>
     <div id="carouselExampleCaptions" className="carousel slide dir-carousel" data-ride="carousel">
-      <ol className="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      </ol>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src="https://i.ebayimg.com/images/g/pHYAAOSwqn1eGM1H/s-l640.jpg" className="d-block w-100" alt="..."/>
-          <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      {this.state.employees.map((employee, index) => {
+        return (
+        <div key={index}>
+          <ol className="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to={index-1} className="active"></li>
+        </ol>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={employee.image} className="d-block w-100" alt="..."/>
+            <div className="carousel-caption d-none d-md-block">
+              <h5>{employee.name}</h5>
+              <p>{employee.desc}</p>
+            </div>
           </div>
         </div>
-        <div className="carousel-item">
-          <img src="..." className="d-block w-100" alt="..."/>
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
         </div>
-        <div className="carousel-item">
-          <img src="..." className="d-block w-100" alt="..."/>
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </div>
-      </div>
+        )
+      })}
+
       <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="sr-only">Previous</span>
