@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+.dir-image {
+  width: 75px;
+  border-radius: 10px;
+}
+
+.dir-carousel {
+  width:600px;
+  align-self: center;
+}
+
+.dir-entry{
+  background-color: beige;
+  border-radius:5px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
